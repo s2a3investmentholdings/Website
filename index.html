@@ -27,8 +27,8 @@
 								<h1>S2A3</h1>
 								<h1>DEVELOPERS & RENOVATORS</h1>
 								<p>A construction and property management company </p>
-								<h2>At 470 1st Ave E, North Bay,</h2>
-								<h2>ON P1B 1K3, Canada </h2>
+								<h2>At 531 Cassels Street, North Bay,</h2>
+								<h2>North Bay, Canada </h2>
 								<h3 class="lowercase"> EMAIL : s2a3investmentholdings@gmail.com </h3>
 							</div>
 						</div>
@@ -70,8 +70,13 @@
 
 								      <div class="ws-slide active">
 								        <span class="image main">
-								          <img src="images/CAFE 1.jpg"alt="Residential Renovation" />
+								             <div class="project-slider">
+											      <img src="images/project1-1.jpg" class="active" alt="Project 1 Image 1">
+											      <img src="images/project1-2.jpg" alt="Project 1 Image 2">
+											      <img src="images/project1-3.jpg" alt="Project 1 Image 3">
+											    </div>
 								        </span>
+
 								        <h3>The Rendezvous Cafe, North Bay</h3>
 								        <p>
 								          This interior redesign for a café in North Bay blends modern industrial architecture with warm, inviting elements to create a functional yet visually striking space. The design features clean lines, a neutral base palette, and black millwork contrasted with natural wood flooring to add warmth and balance. Open shelving, minimalist lighting fixtures, and a bold feature mural bring character without overwhelming the space. The centrally located service counter improves workflow while acting as a visual anchor, enhancing customer interaction and efficiency.</p>
@@ -156,7 +161,7 @@
 
 								    <!-- Column 2 -->
 								    <div class="services-column">
-								      <h3>🏢 Property Managem</h3>
+								      <h3>🏢 Property Management</h3>
 								      <ul>
 								        <li><span class="iconservices">🔧</span> General Repairs & Maintenance</li>
 								        <li><span class="iconservices">🔄</span> Tenant Turnover Services</li>
@@ -455,6 +460,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
+
+
 			<script>
 (function () {
   const slides = document.querySelectorAll('#work .ws-slide');
@@ -512,6 +521,37 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     if (endX - startX > 50) prevSlide();
   });
 })();
+</script>
+
+
+
+<script>
+document.querySelectorAll('.project-slider').forEach(slider => {
+  const slides = slider.querySelectorAll('img');
+  let current = 0;
+
+  // Automatic slide every 4 seconds
+  let interval = setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 4000);
+
+  // Click to show next image
+  slider.addEventListener('click', () => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+
+    // reset interval so auto-slide continues
+    clearInterval(interval);
+    interval = setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4000);
+  });
+});
 </script>
 
 <script>

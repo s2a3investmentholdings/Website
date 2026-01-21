@@ -1811,3 +1811,29 @@ body:not(.is-article-visible) .ws-arrow {
 }
 
 .lowercase {text-transform: lowercase;}
+
+.project-slider {
+  position: relative;
+  display: inline-block; /* keeps original image size */
+  border-radius: 25px;   /* curved border */
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* smooth fade */
+  border-radius: 25px;
+  width: auto;
+  height: auto;
+}
+
+/* Show first image */
+.project-slider img.active {
+  opacity: 1;
+  z-index: 2;
+  position: relative; /* keep container size */
+}
